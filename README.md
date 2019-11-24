@@ -17,9 +17,9 @@ npm install --save async-carousel
 ```
 
 ## Usage
+Lets say we have list of image src within an array called *images*
 
 ### with sync function
-
 ```javascript
 <AsyncCarousel
   getContentPromise={this.getContentPromise}
@@ -29,14 +29,19 @@ npm install --save async-carousel
 ```
 
 ```javascript
-function getContent(i) {
-  const len = images.length;
-  let poss = i % len;
-  if (poss < 0) {
-    poss += len;
-  }
-  const src = images[poss];
-  return <img src={src} alt={i + "-" + poss} />;
+function getContentPromise(i){
+  return new Promise((resolve, reject) => {
+    // Get modulo of images length (positive and negative indexes are possible)
+    const len = images.length;
+    let poss = i % len;
+    if (poss < 0) {
+      poss += len;
+    }
+    // get image src
+    const src = images[poss];
+    // create and return image component with resolve
+    resolve(<img src={src} alt={i + "-" + poss} />);
+  });
 }
 ```
 
@@ -47,18 +52,20 @@ function getContent(i) {
 ```
 
 ```javascript
-  function getContentPromise(i){
-      return new Promise((resolve, reject) => {
-        const len = images.length;
-        let poss = i % len;
-        if (poss < 0) {
-          poss += len;
-        }
-        const src = images[poss];
-        resolve(<img src={src} alt={i + "-" + poss} />);
-      });
-    }
+function getContent(i) {
+  // Get modulo of images length (positive and negative indexes are possible)
+  const len = images.length;
+  let poss = i % len;
+  if (poss < 0) {
+    poss += len;
+  }
+  // Get image src
+  const src = images[poss];
+  // create and return image component
+  return <img src={src} alt={i + "-" + poss} />;
+}  
 ```
+
 
 ## License
 

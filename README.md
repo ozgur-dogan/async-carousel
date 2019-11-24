@@ -13,6 +13,40 @@ It also support Promises.
 npm install --save async-carousel
 ```
 ## Usage
-check example/App.js file
+### with sync function
+  <AsyncCarousel
+    getContentPromise={this.getContentPromise}
+    height={300}
+    width={300}
+  />
+
+  getContent(i) {
+    const len = images.length;
+    let poss = i % len;
+    if (poss < 0) {
+      poss += len;
+    }
+    const src = images[poss];
+    return <img src={src} alt={i + "-" + poss} />;
+  }
+
+### with promise
+  <AsyncCarousel
+    getContent={this.getContent}
+    height={300}
+    width={300}
+  />
+  getContentPromise(i) {
+      return new Promise((resolve, reject) => {
+        const len = images.length;
+        let poss = i % len;
+        if (poss < 0) {
+          poss += len;
+        }
+        const src = images[poss];
+        resolve(<img src={src} alt={i + "-" + poss} />);
+      });
+    }
+
 ## License
 MIT © [ozgur-dogan](https://github.com/ozgur-dogan)

@@ -1,7 +1,11 @@
 import React, { Component } from "react";
+import PropTypes from 'prop-types';
 import "./AsyncCarousel.scss";
 
 class AsyncCarousel extends Component {
+  static propTypes = {
+    currentContent : PropTypes.
+  }
   constructor(props) {
     super(props);
     this.state = {left:0};

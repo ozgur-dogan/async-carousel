@@ -10,7 +10,7 @@ const images = [
 export default class extends Component {
   constructor(p) {
     super(p);
-    this.state = {index:0}
+    this.state = {index:images.length * 100000}
   }
   render() {
     const { index } = this.state;

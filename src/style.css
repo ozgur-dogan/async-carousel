@@ -8,18 +8,24 @@
   position: absolute;
   top: 0;
   bottom: 0;
+  z-index: 0;
+  overflow: hidden;
 }
 .previousContent {
   position: absolute;
   top: 0;
   bottom: 0;
   left: -100%;
+  z-index: -1;
+  overflow: hidden;
 }
 .nextContent {
   position: absolute;
   top: 0;
   bottom: 0;
   left: 100%;
+  z-index: -1;
+  overflow: hidden;
 }
 .prevArrow {
   position: absolute;

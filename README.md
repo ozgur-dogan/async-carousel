@@ -19,7 +19,7 @@ npm install --save async-carousel
 ## Usage
 Lets say we have list of image src within an array called *images*
 
-### with sync function
+### with promise
 ```javascript
 <AsyncCarousel
   getContentPromise={this.getContentPromise}
@@ -45,8 +45,8 @@ function getContentPromise(i){
 }
 ```
 
-### with promise
 
+### with sync function
 ```javascript
 <AsyncCarousel getContent={this.getContent} height={300} width={300} />
 ```

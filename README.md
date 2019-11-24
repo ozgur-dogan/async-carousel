@@ -12,19 +12,7 @@ npm install --save async-carousel
 
 ## Usage
 
-```jsx
-import React, { Component } from 'react'
-
-import MyComponent from 'async-carousel'
-
-class Example extends Component {
-  render () {
-    return (
-      <MyComponent />
-    )
-  }
-}
-```
+check example/App.js file
 
 ## License
 

@@ -4,28 +4,18 @@
   overflow: hidden;
   position: relative;
 }
-.currentContent {
+.content{
   position: absolute;
   top: 0;
   bottom: 0;
   z-index: 0;
   overflow: hidden;
+  height: 100%;
+  width: 100%;
 }
-.previousContent {
-  position: absolute;
-  top: 0;
-  bottom: 0;
-  left: -100%;
-  z-index: -1;
-  overflow: hidden;
-}
-.nextContent {
-  position: absolute;
-  top: 0;
-  bottom: 0;
-  left: 100%;
-  z-index: -1;
-  overflow: hidden;
+.contents{
+  height: 100%;
+  width: 100%;
 }
 .prevArrow {
   position: absolute;

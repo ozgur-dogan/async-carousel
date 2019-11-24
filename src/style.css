@@ -1,0 +1,47 @@
+.asyncCarousel {
+  width: 100%;
+  min-height: 10px;
+  overflow: hidden;
+  position: relative;
+}
+.currentContent {
+  position: absolute;
+  top: 0;
+  bottom: 0;
+}
+.previousContent {
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: -100%;
+}
+.nextContent {
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: 100%;
+}
+.prevArrow {
+  position: absolute;
+  height: 40px;
+  width: 40px;
+  top: calc(50% - 20px);
+  color: #fff;
+  text-align: center;
+  line-height: 40px;
+  font-size: 40px;
+  cursor: pointer;
+  left: 0;
+}
+.nextArrow {
+  position: absolute;
+  height: 40px;
+  width: 40px;
+  top: calc(50% - 20px);
+  color: #fff;
+  text-align: center;
+  line-height: 40px;
+  font-size: 40px;
+  cursor: pointer;
+  right: 0;
+}

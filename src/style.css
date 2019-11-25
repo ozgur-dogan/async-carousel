@@ -4,7 +4,7 @@
   overflow: hidden;
   position: relative;
 }
-.content{
+.content {
   position: absolute;
   top: 0;
   bottom: 0;
@@ -13,31 +13,32 @@
   height: 100%;
   width: 100%;
 }
-.contents{
+.contents {
   height: 100%;
   width: 100%;
 }
 .prevArrow {
   position: absolute;
-  height: 40px;
-  width: 40px;
-  top: calc(50% - 20px);
-  color: #fff;
-  text-align: center;
-  line-height: 40px;
-  font-size: 40px;
-  cursor: pointer;
+  top: 0;
   left: 0;
+  cursor: pointer;
 }
 .nextArrow {
   position: absolute;
-  height: 40px;
-  width: 40px;
-  top: calc(50% - 20px);
-  color: #fff;
-  text-align: center;
-  line-height: 40px;
-  font-size: 40px;
-  cursor: pointer;
+  top: 0;
   right: 0;
+  cursor: pointer;
+}
+.navIcon {
+  background-color: #666;
+  text-align: center;
+  border-radius: 30px;
+  width: 25px;
+  height: 25px;
+  line-height: 25px;
+  font-size: 15px;
+  color: #ccc;
+  margin: 5px 10px;
+  box-sizing: border-box;
+  display: block;
 }

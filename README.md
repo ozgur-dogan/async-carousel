@@ -17,9 +17,11 @@ npm install --save async-carousel
 ```
 
 ## Usage
-Lets say we have list of image src within an array called *images*
+
+Lets say we have list of image src within an array called _images_
 
 ### with promise
+
 ```javascript
 <AsyncCarousel
   getContentPromise={this.getContentPromise}
@@ -29,7 +31,7 @@ Lets say we have list of image src within an array called *images*
 ```
 
 ```javascript
-function getContentPromise(i){
+function getContentPromise(i) {
   return new Promise((resolve, reject) => {
     // Get modulo of images length (positive and negative indexes are possible)
     const len = images.length;
@@ -45,8 +47,8 @@ function getContentPromise(i){
 }
 ```
 
-
 ### with sync function
+
 ```javascript
 <AsyncCarousel getContent={this.getContent} height={300} width={300} />
 ```
@@ -63,9 +65,40 @@ function getContent(i) {
   const src = images[poss];
   // create and return image component
   return <img src={src} alt={i + "-" + poss} />;
-}  
+}
 ```
 
+### with custom icons
+
+```javascript
+<AsyncCarousel
+  prevIcon={this.getPrevIcon()}
+  nextIcon={this.getNextIcon()}
+  getContentPromise={this.getContentPromise}
+  height={300}
+  width={300}
+/>
+```
+
+```javascript
+getPrevIcon(){
+  return <div className="customIcon"><FontAwesomeIcon icon={faCaretSquareLeft} /></div>
+}
+getNextIcon(){
+  return <div className="customIcon"><FontAwesomeIcon icon={faCaretSquareRight} /></div>
+}
+```
+
+## Parameters
+| Prop              | Required | Type          | Description                                        |
+| ------------------| -------- | ------------- | -------------------------------------------------- |
+| Height            | True     | Number or "%" | Width of the Carousel                              |
+| Width             | True     | Number or "%" | Height of the Carousel                             |
+| getContent        | False    | Fn (index)    | Function to get React element on index             |
+| getContentPromise | False    | Fn (index)    | Function to get React element on index (Promise)   |
+| prevIcon          | False    | React Element | custom icon for prev button                        |
+| nextIcon          | False    | React Element | custom icon for next button                        |
+* getContent or getContentPromise should be supplied
 
 ## License
 

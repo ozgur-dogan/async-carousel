@@ -1,0 +1,19 @@
+.img {
+  min-width: 100%;
+}
+section {
+  display: inline-block;
+  margin: 10px;
+}
+.customIcon {
+  margin: 10px;
+  font-size: 30px;
+  color: #cc4444;
+  filter: drop-shadow(3px 3px 2px rgba(0, 0, 0, 0.5));
+  transition:all 0.1s;
+}
+.customIcon:hover {
+  font-size: 33px;
+  filter: drop-shadow(3.3px 3.3px 2.2px rgba(0, 0, 0, 0.5));
+  transition:all 0.3s;
+}
